@@ -15,6 +15,7 @@ object Test {
     val wordCounts= data
 //      .flatMap{w=>w.split("\\s")}
       .map(w=>WordCount(w.split(",")(0),w.split(",")(1).toLong))
+//      .map(w=>WordCount(w,1))
       .keyBy("word")
       .max("count")
 //      .countWindowAll(5)
